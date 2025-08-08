@@ -1,0 +1,106 @@
+:root{
+  --bg:#0b0c0f;
+  --card:#0f1114;
+  --accent:#ff4500;
+  --muted:#9aa0a6;
+}
+*{box-sizing:border-box; margin:0; padding:0}
+
+body {
+  font-family: Inter, system-ui, Arial;
+  background: 
+    linear-gradient(rgba(11, 12, 15, 0.85), rgba(7, 7, 8, 0.95)),
+    url('SRC/ChatGPT\ Image\ Aug\ 8\,\ 2025\,\ 11_23_29\ AM.png') center/cover no-repeat fixed;
+  color: #eee;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Center the subject of the image */
+  background: url('9d692dea-07ea-459e-b473-bb4cd45dce40.png') no-repeat center center/cover;
+  background-position: 55% center; /* adjust horizontal % to perfectly center the man */
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+#cursor{
+  position:fixed;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  pointer-events:none;
+  transform:translate(-50%,-50%);
+  mix-blend-mode: difference;
+  background: var(--accent);
+  box-shadow:0 0 18px rgba(255,69,0,0.6);
+  transition: width .12s ease, height .12s ease, background .12s;
+  z-index:9999;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 36px;
+  position:sticky;
+  top:0;
+  z-index:50;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  backdrop-filter: blur(6px);
+}
+.brand{font-weight:800; letter-spacing:1px; font-size:20px; color:var(--accent)}
+.nav-links{list-style:none; display:flex; gap:20px}
+.nav-links a{color:var(--muted); text-decoration:none}
+
+.hero{position:relative; height:60vh; display:flex; align-items:center; justify-content:center; overflow:hidden}
+.carousel{position:absolute; inset:0; display:flex; transition:transform 0.8s ease; will-change:transform;}
+.slide{min-width:100%; background-size:cover; background-position:center; filter:brightness(0.45); transition:transform .6s ease;}
+.slogan{position:relative; z-index:2; text-align:center; width:100%}
+.slogan-text{font-size:clamp(28px,6vw,60px); font-weight:900; color:white; text-transform:uppercase; letter-spacing:3px;
+  animation: pop 2.6s ease-in-out infinite;}
+@keyframes pop{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+
+.register-section{padding:48px 20px; display:flex; justify-content:center}
+.form-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:28px; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.6); width:100%; max-width:720px}
+.form-card h2{margin-bottom:16px; color:var(--accent)}
+form label{display:block; margin-top:10px; color:var(--muted); font-size:14px}
+input, select{width:100%; padding:12px; margin-top:6px; background:var(--card); border:1px solid rgba(255,255,255,0.03); border-radius:8px; color:#fff}
+input:focus, select:focus{outline:none; box-shadow:0 0 0 4px rgba(255,69,0,0.06)}
+
+.radio-row{display:flex; gap:12px; margin-top:8px}
+.btn{margin-top:18px; padding:12px 16px; background:linear-gradient(90deg,var(--accent), #ff7a3d); border:none; border-radius:10px; cursor:pointer; font-weight:700}
+.btn:hover{transform:translateY(-3px); box-shadow:0 12px 30px rgba(255,69,0,0.12)}
+
+.form-msg{margin-top:10px; color:#b3ffcc; font-weight:600}
+
+.shop-section{padding:48px 20px; background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.shop-section h2{text-align:center; margin-bottom:18px; color:var(--accent)}
+.cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px; max-width:1100px; margin:0 auto}
+.card{background:var(--card); padding:12px; border-radius:12px; text-align:center; box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+.card img{width:100%; height:140px; object-fit:cover; border-radius:8px}
+.card h3{margin:8px 0}
+.price{color:var(--muted); margin-bottom:8px}
+.buy-btn{padding:10px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:700; background:transparent; color:var(--accent)}
+.buy-btn:hover{color:#fff; transform:translateY(-4px)}
+
+footer{padding:20px; text-align:center; color:var(--muted); margin-top:30px}
+
+@media(max-width:720px){
+  .nav-links{display:none}
+  .hero{height:50vh}
+  .slogan-text{font-size:28px}
+}

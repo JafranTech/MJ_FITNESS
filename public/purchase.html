@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purchase — IronPulse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">IronPulse</div>
+    <ul class="nav-links">
+      <li><a href="index.html#home">Home</a></li>
+      <li><a href="index.html#register">Register</a></li>
+      <li><a href="index.html#shop">Shop</a></li>
+    </ul>
+  </nav>
+
+  <main style="padding:40px 20px; display:flex; justify-content:center; align-items:center; min-height:60vh">
+    <div class="form-card" style="max-width:720px; text-align:left">
+      <h2>Purchase</h2>
+      <div id="purchaseInfo"></div>
+      <p style="margin-top:12px">Fill details to complete purchase (demo only)</p>
+      <form id="purchaseForm">
+        <label for="buyer">Your Name</label>
+        <input id="buyer" name="buyer" required />
+        <label for="addr">Address</label>
+        <input id="addr" name="address" required />
+        <button class="btn" type="submit">Confirm & Pay</button>
+      </form>
+      <p id="payMsg" class="form-msg"></p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      <p>© <span id="year"></span> IronPulse Gym — Built for the grinders.</p>
+    </div>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const item = params.get('item');
+    const price = params.get('price');
+    const order = params.get('order');
+    document.getElementById('purchaseInfo').innerHTML = `<p><strong>Item:</strong> ${item}</p><p><strong>Price:</strong> ₹${price}</p><p><strong>Order ID:</strong> ${order}</p>`;
+
+    document.getElementById('purchaseForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('payMsg').textContent = 'Payment simulated. Thank you!';
+      setTimeout(()=> location.href='index.html', 1800);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

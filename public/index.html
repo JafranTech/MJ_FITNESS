@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MJ FITNESS Gym — Join the Grind</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <div id="cursor"></div>
+
+  <nav class="navbar">
+    <div class="brand">MJ FITNESS</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="carousel">
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1594737625785-7f1d5f0f3be0?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1400&amp;q=80')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1579758629937-1a2d1f9f0b6b?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1400&amp;q=80')"></div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1546484959-f5a3f10d5b91?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1400&amp;q=80')"></div>
+      </div>
+      <div class="slogan">
+        <h1 class="slogan-text">GRIND TODAY. GLOW TOMORROW.</h1>
+      </div>
+    </section>
+
+    <section id="register" class="register-section">
+      <div class="form-card">
+        <h2>Join MJ FITNESS</h2>
+        <form id="regForm">
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="age">Age</label>
+          <input id="age" name="age" type="number" min="10" max="100" required />
+
+          <label>Gender</label>
+          <div class="radio-row">
+            <label><input type="radio" name="gender" value="Male" required /> Male</label>
+            <label><input type="radio" name="gender" value="Female" required /> Female</label>
+            <label><input type="radio" name="gender" value="Other" required /> Other</label>
+          </div>
+
+          <label for="level">Are you a</label>
+          <select id="level" name="level" required>
+            <option value="">Select...</option>
+            <option>Newbie</option>
+            <option>Intermediate</option>
+          </select>
+
+          <label>Cardio Preference</label>
+          <div class="radio-row">
+            <label><input type="radio" name="cardio" value="Cardio" required /> Cardio</label>
+            <label><input type="radio" name="cardio" value="Non-cardio" required /> Non-cardio</label>
+          </div>
+
+          <label for="training">Training Mode</label>
+          <select id="training" name="training" required>
+            <option value="">Select...</option>
+            <option>Trainer</option>
+            <option>Self-train</option>
+          </select>
+
+          <button type="submit" class="btn">Register</button>
+          <p id="formMsg" class="form-msg"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="shop" class="shop-section">
+      <h2>Gym Essentials</h2>
+      <div class="cards">
+        <div class="card">
+          <img src="SRC/DUMBELLS.jpg" alt="Dumbbell">
+          <h3>Dumbbell Pair</h3>
+          <p class="price">₹1999</p>
+          <button class="buy-btn" data-item="Dumbbell Pair" data-price="1999">Buy</button>
+        </div>
+
+        <div class="card">
+          <img src="SRC/PLATES.jpg" alt="Plates">
+          <h3>Weight Plates (Set)</h3>
+          <p class="price">₹2499</p>
+          <button class="buy-btn" data-item="Weight Plates" data-price="2499">Buy</button>
+        </div>
+
+        <div class="card">
+          <img src="SRC/OLYMPIC.jpg" alt="Rod">
+          <h3>Olympic Rod</h3>
+          <p class="price">₹3999</p>
+          <button class="buy-btn" data-item="Olympic Rod" data-price="3999">Buy</button>
+        </div>
+
+        <div class="card">
+          <img src="SRC/BELT.jpeg" alt="Belt">
+          <h3>Power Belt</h3>
+          <p class="price">₹899</p>
+          <button class="buy-btn" data-item="Power Belt" data-price="899">Buy</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="contact">
+    <div class="footer-wrap">
+      <p>© <span id="year"></span> IronPulse Gym — Built for the grinders.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
