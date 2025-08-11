@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/gymDB";
+const MONGO_URI = "mongodb+srv://jafran:kingjafran@cluster0.84wxfsz.mongodb.net/gymDB?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
